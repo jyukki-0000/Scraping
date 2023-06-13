@@ -13,7 +13,7 @@ Tonamel Shadowverse大会情報Botは、Tonamel上で開催されるShadowverse�
 
 1. このリポジトリをクローンします。
     ```bash
-    git clone https://github.com/jyukki-0000/Tonamel-Shadowverse-Tournament-Bot.git
+    git clone https://github.com/jyukki-0000/Scraping.git
     ```
 
 2. 必要なパッケージをインストールします。パッケージには、selenium、requests、discordが必要です。
