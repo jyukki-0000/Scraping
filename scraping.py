@@ -12,8 +12,8 @@ from selenium.webdriver.common.by import By
 SHADOWVERSE_URL = "https://tonamel.com/competitions?game=shadowverse&date="
 
 # DiscordのWebhook URLとチャンネルID
-WEBHOOK_URL = "https://discord.com/api/webhooks/1110749058420723762/zt2voBzUUaBTmG0mBhLE0jWzyZVPXQw7pMEuKaBn4_NCeF1ObkpkSG85h0kEvlm0IZpd"
-CHANNEL_ID = "1110749019791163503"
+WEBHOOK_URL = "WEBHOOK_URL"
+CHANNEL_ID = "CHANNEL_ID"
 
 def get_today_date():
     """
@@ -81,7 +81,7 @@ def send_to_discord(url, tournaments):
     requests.post(url, headers=headers, data=json.dumps(payload))
 
 if __name__ == "__main__":
-    s = Service('/Users/jyukki-/Desktop/TonamelBot/chromedriver')  # Chromedriverのパスを指定
+    s = Service('/path/chromedriver')  # Chromedriverのパスを指定
     driver = webdriver.Chrome(service=s)
 
     filtered_url = SHADOWVERSE_URL
@@ -92,4 +92,4 @@ if __name__ == "__main__":
 
     driver.quit()
 
-subprocess.run(["/usr/local/bin/python3", "/Users/jyukki-/Desktop/TonamelBot/share.py"])
+subprocess.run(["/usr/local/bin/python3", "/path/share.py"])
