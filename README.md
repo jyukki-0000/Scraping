@@ -1,6 +1,6 @@
-# Tonamel Shadowverse大会Bot
+# Tonamel Shadowverse大会情報Bot
 
-Tonamel Shadowverse大会Botは、Tonamel上で開催されるShadowverseの大会情報を自動的に抽出し、Discordに通知するPythonBotです。特定の日付の大会情報をスクレイピングし、取得した情報をDiscordの指定したチャンネルに送信します。
+Tonamel Shadowverse大会情報Botは、Tonamel上で開催されるShadowverseの大会情報を自動的に抽出し、Discordに通知するPythonBotです。特定の日付の大会情報をスクレイピングし、取得した情報をDiscordの指定したチャンネルに送信します。
 
 ## 🎯 主な機能
 
