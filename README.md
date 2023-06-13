@@ -33,7 +33,7 @@ Tonamel Shadowverse大会情報Botは、Tonamel上で開催されるShadowverse�
 
 ## 📖 コード解説
 
-### Main.py
+### Scraping.py
 
 - `get_today_date()`
 
