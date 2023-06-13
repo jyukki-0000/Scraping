@@ -17,7 +17,7 @@ async def on_ready():
 @bot.event
 async def on_message(message):
     # 新しいメッセージが投稿されたときに実行されるイベントハンドラ
-    if message.channel.id == 1110749019791163503:  # あなたのチャンネルIDに置き換えてください
+    if message.channel.id == 00000000:  # チャンネルID
         if message.type == discord.MessageType.default and message.author != bot.user:
             try:
                 await message.publish()  # メッセージを公開
