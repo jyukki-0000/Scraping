@@ -1,57 +1,58 @@
-# Tonamel Shadowverse Tournament Bot
+# Tonamel Shadowverse大会Bot
 
-Tonamel Shadowverse Tournament Bot is a Python bot that automatically extracts tournament information for Shadowverse held on Tonamel and sends notifications to Discord. It scrapes tournament information for a specific date and sends the information obtained to a designated channel on Discord.
+Tonamel Shadowverse大会Botは、Tonamel上で開催されるShadowverseの大会情報を自動的に抽出し、Discordに通知するPythonBotです。特定の日付の大会情報をスクレイピングし、取得した情報をDiscordの指定したチャンネルに送信します。
 
-## 🎯 Main Features
+## 🎯 主な機能
 
-- Automatically scrapes tournament information for Shadowverse from Tonamel.
-- Sends scraped tournament information to a designated channel on Discord.
+- TonamelからShadowverseの大会情報を自動的にスクレイピングします。
+- スクレイピングした大会情報をDiscordの指定チャンネルに通知します。
+- Discordに投稿された新しいメッセージを自動的に公開します。
 
-## 🚀 Usage
+## 🚀 使い方
 
-1. Clone this repository.
+1. このリポジトリをクローンします。
     ```bash
     git clone https://github.com/<your-github-username>/Tonamel-Shadowverse-Tournament-Bot.git
     ```
 
-2. Install the necessary packages, including selenium and requests.
+2. 必要なパッケージをインストールします。パッケージには、selenium、requests、discordが必要です。
     ```bash
-    pip install selenium requests
+    pip install selenium requests discord
     ```
 
-3. Specify the path to your chromedriver. Specifically, modify the section under `if __name__ == "__main__":`.
+3. Chromedriverのパスを記載します。具体的には、`if __name__ == "__main__":`以下にある部分を修正します。
     ```python
-    s = Service('/path/to/your/chromedriver')  # Specify the path to your chromedriver
+    s = Service('/path/to/your/chromedriver')  # Chromedriverのパスを指定
     ```
 
-4. Set your Discord webhook URL and channel ID.
+4. DiscordのWebhook URLとチャンネルIDを設定します。
 
-5. Run the Python script.
+5. Discord Botのトークンを設定します。
 
-## 📖 Code Explanation
+6. Pythonのスクリプトを実行します。
+
+## 📖 コード解説
+
+### Main.py
 
 - `get_today_date()`
 
-    Gets the current date in 'YYYY/MM/DD' format.
+    現在の日付を'YYYY/MM/DD'の形式で取得します。
 
 - `scrape_tonamel(driver, url)`
 
-    Scrapes tournament information from the specified URL. It retrieves 10 tournament information and only adds the tournament information of the day to the list.
+    指定したURLから大会情報をスクレイピングします。10個の大会情報を取得し、その日の大会情報のみをリストに追加します。
 
 - `send_to_discord(url, tournaments)`
 
-    Sends tournament information to Discord. If there is no tournament information, it sends a notification to that effect, and if there is tournament information, it sends that information.
+    大会情報をDiscordに送信します。大会情報がない場合はその旨を通知し、大会情報がある場合はその情報を送信します。
 
-## 📝 License
+### Share.py
 
-This project is released under the MIT license.
+- `on_ready()`
 
-## ⚠️ Disclaimer
+    Botがログインしたときに実行されるイベントハンドラです。
 
-This script retrieves information from published web pages. If the specifications of the web page change, there may be a possibility that the script does not work as expected. Also, if inappropriate use is made, the website administrator may take measures such as access restrictions, so please use it with caution.
+- `on_message(message)`
 
-## 👤 Author
-
-[jyukki-](https://github.com/jyukki-)
-
-If you find any problems or have any questions, please feel free to open an issue.
+    新しいメッセージが投稿されたときに実行されるイベントハンドラです。指定したチャンネルIDに新しいメッセージが投稿されたとき、そのメッセージを自動的に公開します。
